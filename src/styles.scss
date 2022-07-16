@@ -1,0 +1,110 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  font-size: 0;
+  font-family: Arial, sans-serif;
+  position: relative;
+}
+
+html {
+  overflow-y: scroll;
+}
+
+#controls {
+  position: absolute;
+  padding: 10px;
+
+  display: flex;
+  gap: 4px;
+
+  button {
+    cursor: pointer;
+    margin: 0;
+    border-radius: 100%;
+    border: 1px solid #ccc;
+    background: #efefef;
+    box-shadow: 0 0 5px 5px #fff;
+    color: #ccc;
+    line-height: 16px;
+    font-size: 14px;
+
+    &:hover {
+      color: #999;
+    }
+  }
+
+  span {
+    line-height: 20px;
+    font-size: 16px;
+
+    color: #ccc;
+    
+    background: #fff;
+    box-shadow: 0 0 5px 5px #fff;
+
+    span {
+      box-shadow: none;
+    }
+  }
+}
+
+table {
+  margin: 20px auto;
+  counter-reset: decade;
+}
+
+td {
+  background: #ccc;
+  border-color: #fff;
+  border-style: solid;
+
+  &.m {
+    padding: 2px 20px;
+    border-width: 1px 5px;
+  }
+
+  &.w {
+    padding: 5px;
+    border-width: 1px;
+  }
+
+  &.d {
+    padding: 1px;
+    border-width: 0px;
+  }
+
+  &.none {
+    background: #fff
+  }
+
+  &.prev {
+    background: rgba(#ccc, 0.4);
+  }
+
+  &.next {
+    background: #ccc;
+  }
+
+  &.prev + &.next {
+    background: green;
+  }
+}
+
+tr {
+  &::before {
+    position: relative;
+    left: 0px;
+
+    content: "";
+
+    font-size: 6px;
+    line-height: 0;
+  }
+
+  &:nth-child(10n)::before {
+    counter-increment: decade;
+    content: counter(decade) "0";
+
+    top: 1em;
+  }
+}
