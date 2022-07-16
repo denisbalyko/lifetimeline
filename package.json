@@ -10,7 +10,7 @@
   },
   "scripts": {
     "start": "parcel",
-    "build": "parcel build --dist-dir public",
+    "build": "parcel build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
