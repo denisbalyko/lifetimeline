@@ -94,7 +94,11 @@ td {
     background: #fff
   }
 
-  &.prev {
+  &.youth {
+    background: rgba(#aec9a6, 0.3);
+  }
+
+  &.maturity {
     background: rgba(#ccc, 0.4);
   }
 
@@ -102,7 +106,8 @@ td {
     background: #ccc;
   }
 
-  &.prev + &.next {
+  &.youth + &.next,
+  &.maturity + &.next {
     background: green;
   }
 }

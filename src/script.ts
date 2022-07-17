@@ -1,6 +1,7 @@
 enum Cell {
   none = "none",
-  prev = "prev",
+  youth = "youth",
+  maturity = "maturity",
   next = "next",
 }
 
@@ -90,7 +91,9 @@ class Timeline {
         if (currDate <= this.start) {
           currData.push(Cell.none);
         } else if (currDate < now) {
-          currData.push(Cell.prev);
+          currData.push(
+            currYear <= startYear + 18 ? Cell.youth : Cell.maturity
+          );
         } else {
           currData.push(Cell.next);
         }
